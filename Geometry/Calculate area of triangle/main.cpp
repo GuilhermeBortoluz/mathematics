@@ -30,8 +30,8 @@ void menu(){
         cin >> h;
     }
     }
-bool test_trinagulo(){
-    if ((base+n2) > n3 and (base+n3) > n2 and (n2+n3) > base){
+bool test_triangulo(){
+    if ((base+n2) > n3 && (base+n3) > n2 && (n2+n3) > base){
         return true;
     }
     else{
@@ -57,19 +57,22 @@ int main(){
     while (repetir==1)
     {
         menu();
-        while (test_trinagulo() == false){
+        if (base!=0 && n2!=0 && n3!=0){
+            while (test_triangulo() == false){
             menu();
-            test_trinagulo();
+            test_triangulo();
         }
-        if ((base==n2) and (n2==n3)){
+        }
+        
+        if ((base==n2) && (n2==n3)){
             cout <<"Area = " << equilatero() << endl;
         }
-        else if ((base!=0)and h!=0){
+        else if ((base!=0) && h!=0){
 
             cout << "Area = " << isosceles() << endl;
 
         }
-        if (base!=0 and n2 !=0 and n3!=0 and (((base!=n2) and (base!=n3) and (n2!=n3)) and h==0))
+        if (base!=0 && n2 !=0 && n3!=0 && (((base!=n2) && (base!=n3) and (n2!=n3)) && h==0))
         {
             cout << "Area = " << heron() << endl;
 
